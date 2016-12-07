@@ -3,7 +3,8 @@ const configuration = {
 		build: './build',
 		content: './content',
 		layout: './layout',
-		stylesheets: './assets/stylesheets'
+		stylesheets: './assets/stylesheets',
+		javascripts: './assets/javascripts'
 	}
 }
 

@@ -1,5 +1,8 @@
 const del = require('del'),
-	moment = require('moment')
+	moment = require('moment'),
+	browserify = require('browserify'),
+	riotify = require('riotify'),
+	vinylSourceStream = require('vinyl-source-stream')
 
 // Gulp plugins
 const ghPages = require('gulp-gh-pages'),
@@ -53,6 +56,20 @@ module.exports = (gulp, configuration) => {
 		del.sync(`${configuration.directories.build}/assets/stylesheets`)
 	})
 
+	gulp.task('javascripts', ['javascripts:clean'], () => {
+		browserify({ entries: [`${configuration.directories.javascripts}/ke.js`] })
+			.transform(riotify)
+			.bundle()
+			.pipe(vinylSourceStream('ke.js'))
+			.pipe(gulp.dest(`${configuration.directories.build}/assets/javascripts`))
+			.pipe(connect.reload())
+	})
+
+	gulp.task('javascripts:clean', () => {
+		console.log(`javascripts: Removing old build files from ${configuration.directories.build}/assets/javascripts`)
+		del.sync(`${configuration.directories.build}/assets/javascripts`)
+	})
+
 	gulp.task('serve', () => {
 		return connect.server({
 			root: configuration.directories.build,
@@ -65,5 +82,7 @@ module.exports = (gulp, configuration) => {
 		gulp.watch(`${configuration.directories.content}/**/*.pug`, ['content'])
 		gulp.watch(`${configuration.directories.layout}/**/*.pug`, ['content'])
 		gulp.watch(`${configuration.directories.stylesheets}/**/*.styl`, ['stylesheets'])
+		gulp.watch(`${configuration.directories.javascripts}/**/*.js`, ['javascripts'])
+		gulp.watch(`${configuration.directories.javascripts}/**/*.tag`, ['javascripts'])
 	})
 }
