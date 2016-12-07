@@ -2,7 +2,8 @@ const configuration = {
 	directories: {
 		build: './build',
 		content: './content',
-		layout: './layout'
+		layout: './layout',
+		stylesheets: './assets/stylesheets'
 	}
 }
 
