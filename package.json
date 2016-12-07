@@ -1,24 +1,29 @@
 {
-	"name": "irkka.github.io",
-	"version": "0.0.1",
-	"description": "My personal website",
-	"main": "README.md",
-	"scripts": {
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Irkka/Irkka.github.io.git"
-	},
-	"keywords": [
-		"HTML5",
-		"Javascript",
-		"CSS"
-	],
-	"author": "Ilkka Hakkarainen",
-	"license": "SEE LICENSE IN LICENSE",
-	"bugs": {
-		"url": "https://github.com/Irkka/Irkka.github.io/issues"
-	},
-	"homepage": "https://github.com/Irkka/Irkka.github.io#readme",
-	"private": true
+  "name": "irkka.github.io",
+  "version": "0.0.1",
+  "description": "My personal website",
+  "main": "README.md",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Irkka/Irkka.github.io.git"
+  },
+  "keywords": [
+    "HTML5",
+    "Javascript",
+    "CSS"
+  ],
+  "author": "Ilkka Hakkarainen",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Irkka/Irkka.github.io/issues"
+  },
+  "homepage": "https://github.com/Irkka/Irkka.github.io#readme",
+  "private": true,
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
+    "moment": "^2.17.1"
+  }
 }
