@@ -12,11 +12,12 @@ const ghPages = require('gulp-gh-pages'),
 	stylus = require('gulp-stylus')
 
 module.exports = (gulp, configuration) => {
-	gulp.task('build', ['content'], () => {})
+	gulp.task('build', ['javascripts', 'stylesheets', 'images', 'content'], () => {})
 
 	gulp.task('deploy', ['build'], () => {
+		console.log(`Deploying site from ${configuration.directories.build}`)
+
 		let timestamp = moment().format('YYYY-MM-DDTHH:mm:ss')
-		console.log('Deploying site')
 
 		return gulp.src(`${configuration.directories.build}/**/*`)
 			.pipe(ghPages({
