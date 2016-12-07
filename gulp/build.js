@@ -70,6 +70,18 @@ module.exports = (gulp, configuration) => {
 		del.sync(`${configuration.directories.build}/assets/javascripts`)
 	})
 
+	gulp.task('images', ['images:clean'], () => {
+		console.log(`images: Copying image assets from ${configuration.directories.images}`)
+		return gulp.src(`${configuration.directories.images}/**/*.jpg`)
+			.pipe(gulp.dest(`${configuration.directories.build}/assets/images`))
+			.pipe(connect.reload())
+	})
+
+	gulp.task('images:clean', () => {
+		console.log(`images: Removing old build files from ${configuration.directories.build}/assets/images`)
+		del.sync(`${configuration.directories.build}/assets/images`)
+	})
+
 	gulp.task('serve', () => {
 		return connect.server({
 			root: configuration.directories.build,
@@ -84,5 +96,6 @@ module.exports = (gulp, configuration) => {
 		gulp.watch(`${configuration.directories.stylesheets}/**/*.styl`, ['stylesheets'])
 		gulp.watch(`${configuration.directories.javascripts}/**/*.js`, ['javascripts'])
 		gulp.watch(`${configuration.directories.javascripts}/**/*.tag`, ['javascripts'])
+		gulp.watch(`${configuration.directories.images}/**/*.jpg`, ['images'])
 	})
 }

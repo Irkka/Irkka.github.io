@@ -4,7 +4,8 @@ const configuration = {
 		content: './content',
 		layout: './layout',
 		stylesheets: './assets/stylesheets',
-		javascripts: './assets/javascripts'
+		javascripts: './assets/javascripts',
+		images: './assets/images'
 	}
 }
 
