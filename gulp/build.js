@@ -32,7 +32,11 @@ module.exports = (gulp, configuration) => {
 		console.log(`content: Copying HTML files to ${configuration.directories.build}`)
 		return gulp.src(`${configuration.directories.content}/**/*.pug`)
 			.pipe(frontMatter({ property: 'data', remove: true }))
-			.pipe(pug())
+			.pipe(pug({
+				locals: {
+					routes: configuration.routes
+				}
+			}))
 			.pipe(gulp.dest(configuration.directories.build))
 			.pipe(connect.reload())
 	})

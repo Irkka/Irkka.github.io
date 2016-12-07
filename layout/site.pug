@@ -1,0 +1,15 @@
+extends meta
+
+block content
+	div#site-flex
+		header#header-phone
+			include ./partials/_navigation-main
+
+		input(type='checkbox')#sidebar-toggle
+		div#content-flex
+			div#content
+				block content
+			include ./partials/_sidebar
+
+		footer#footer-phone
+			include ./partials/_navigation-screen

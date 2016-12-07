@@ -1,0 +1,11 @@
+head
+	meta(charset='UTF-8')
+	// All URLs are relative to the root
+	base(href='/')
+	if (title)
+		title Knowledge Engine | #{title}
+	else
+		title Knowledge Engine
+	link(type='text/css' rel='stylesheet' href='assets/stylesheets/ke.css')
+	// Wait until the page has loaded
+	script(type='text/javascript' src='assets/javascripts/ke.js' defer)

@@ -1,0 +1,8 @@
+//- Routes are configured separately by gulp
+- var links = routes
+
+nav.navigation-main
+	each link in links
+		a.navigation-link(href=`${link.path}`)
+			span.navigation-link-icon #{link.icon}
+			span.navigation-link-text #{link.text}

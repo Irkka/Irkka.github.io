@@ -1,0 +1,20 @@
+extends ../site.pug
+
+block content
+	div#page-container
+		div.not-phone
+			include ../partials/_navigation-main.pug
+		main#page
+			block header
+				header#page-header
+					h1#page-title #{title}
+						if author
+							span#page-author
+								| by #{author}
+							span#page-updated
+								| @ #{updated} HE
+			block content
+			block footer
+				footer#page-footer.not-phone
+					p © 2016, Ilkka Hakkarainen
+					p All rights reserved.

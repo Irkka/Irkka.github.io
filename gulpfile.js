@@ -6,7 +6,12 @@ const configuration = {
 		stylesheets: './assets/stylesheets',
 		javascripts: './assets/javascripts',
 		images: './assets/images'
-	}
+	},
+	routes: [
+		{ icon: '⌂', text: 'Home', path: '' },
+		{ icon: '🕮', text: 'Blog', path: 'blog' },
+		{ icon: '⚒', text: 'Craft', path: 'craft' }
+	]
 }
 
 const gulp = require('gulp'),
