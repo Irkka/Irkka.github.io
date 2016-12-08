@@ -6,7 +6,7 @@
 		this.repos = []
 
 		let gh = new Github(),
-			me = gh.getUser(opts.githubUsername)
+			me = gh.getUser(opts.github.username)
 
 		me.listRepos()
 			.then((res) => {
