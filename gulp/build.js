@@ -9,7 +9,8 @@ const ghPages = require('gulp-gh-pages'),
 	pug = require('gulp-pug'),
 	frontMatter = require('gulp-front-matter'),
 	connect = require('gulp-connect'),
-	stylus = require('gulp-stylus')
+	stylus = require('gulp-stylus'),
+	highlight = require('gulp-highlight')
 
 module.exports = (gulp, configuration) => {
 	gulp.task('build', ['javascripts', 'stylesheets', 'images', 'content'], () => {})
@@ -37,6 +38,7 @@ module.exports = (gulp, configuration) => {
 					routes: configuration.routes
 				}
 			}))
+			.pipe(highlight())
 			.pipe(gulp.dest(configuration.directories.build))
 			.pipe(connect.reload())
 	})
