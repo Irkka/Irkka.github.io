@@ -15,4 +15,5 @@ const configuration = {
 }
 
 const gulp = require('gulp'),
-	build = require('./gulp/build')(gulp, configuration)
+	build = require('./gulp/build')(gulp, configuration),
+	image = require('./gulp/image')(gulp, configuration)

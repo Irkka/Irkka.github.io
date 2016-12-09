@@ -79,7 +79,7 @@ module.exports = (gulp, configuration) => {
 
 	gulp.task('images', ['images:clean'], () => {
 		console.log(`images: Copying image assets from ${configuration.directories.images}`)
-		return gulp.src(`${configuration.directories.images}/**/*.jpg`)
+		return gulp.src([`${configuration.directories.images}/**/*.jpg`, `!${configuration.directories.images}/import`])
 			.pipe(gulp.dest(`${configuration.directories.build}/assets/images`))
 			.pipe(connect.reload())
 	})
