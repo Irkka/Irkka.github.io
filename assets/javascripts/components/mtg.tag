@@ -47,7 +47,7 @@
 		this.chosenDeck = {}
 		this.chosenCard = {}
 
-		opts.mtg.decks.forEach((deck) => {
+		opts.decks.forEach((deck) => {
 			let returnedCards = []
 			deck.cards = {}
 

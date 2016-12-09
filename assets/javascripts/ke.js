@@ -164,4 +164,5 @@ const opts = {
 	}
 }
 
-riot.mount('*', opts)
+riot.mount('github', opts.github)
+riot.mount('mtg', opts.mtg)
