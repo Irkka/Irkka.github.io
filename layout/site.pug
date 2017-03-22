@@ -1,6 +1,6 @@
 extends meta
 
-block content
+block site
 	div#site-flex
 		header#header-phone
 			include ./partials/_navigation-main
@@ -8,7 +8,7 @@ block content
 		input(type='checkbox')#sidebar-toggle
 		div#content-flex
 			div#content
-				block content
+				block page
 			include ./partials/_sidebar
 
 		footer#footer-phone
