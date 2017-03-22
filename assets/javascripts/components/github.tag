@@ -19,7 +19,10 @@
 
 		me.listRepos()
 			.then((res) => {
-				repos = res.data
+				// Github-api includes also repositories that the user is a contributor to; this lets only owned repos to pass
+				repos = res.data.filter((repo) => {
+					return repo.owner.login == me.__user
+				})
 				this.displayedRepos = repos.slice(0, 5)
 				this.update()
 			})
