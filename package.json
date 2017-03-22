@@ -21,10 +21,10 @@
   "homepage": "https://github.com/Irkka/Irkka.github.io#readme",
   "private": true,
   "devDependencies": {
-    "browserify": "^13.1.1",
+    "browserify": "^14.1.0",
     "cls-bluebird": "^2.0.1",
     "del": "^2.2.2",
-    "github-api": "^2.3.0",
+    "github-api": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-front-matter": "^1.3.0",
@@ -37,7 +37,7 @@
     "mtgsdk": "^0.1.1",
     "riot": "^3.0.2",
     "riotify": "^2.0.0",
-    "sharp": "^0.16.2",
+    "sharp": "^0.17.2",
     "vinyl-source-stream": "^1.1.0"
   }
 }

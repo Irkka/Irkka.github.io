@@ -77,7 +77,7 @@ tags
 
 
 # Project-specific
-build/
+/build/
 .publish
 # Full-size images
 assets/images/import
